@@ -1,0 +1,273 @@
+/* =====================================================================
+   Style de l'application Streamlit (chargé par app.py -> load_css)
+   ===================================================================== */
+
+/* ---------- Police ---------- */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+.stApp {
+    font-family: 'Poppins', 'Segoe UI', sans-serif;
+}
+.stApp h1, .stApp h2, .stApp h3 {
+    font-family: 'Poppins', 'Segoe UI', sans-serif;
+    font-weight: 700;
+}
+
+/* ---------- Largeur de la page ---------- */
+[data-testid="stMainBlockContainer"], .block-container {
+    max-width: 1150px;
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+}
+
+/* ---------- Animations ---------- */
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(14px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes popIn {
+    0%   { opacity: 0; transform: scale(.94); }
+    100% { opacity: 1; transform: scale(1); }
+}
+@keyframes gradientMove {
+    0%   { background-position: 0% 50%; }
+    50%  { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* ---------- Bannière d'accueil ---------- */
+.hero {
+    background: linear-gradient(120deg, #4f46e5, #7c3aed, #0ea5e9, #10b981);
+    background-size: 300% 300%;
+    animation: gradientMove 6s ease infinite, fadeUp .6s ease both;
+    border-radius: 22px;
+    padding: 28px 30px 24px 30px;
+    color: #fff;
+    box-shadow: 0 10px 30px rgba(79, 70, 229, .30);
+    margin-bottom: 18px;
+}
+.hero-title {
+    font-size: 1.9rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+.hero-sub {
+    opacity: .9;
+    margin-top: 4px;
+    font-size: .95rem;
+}
+.hero-stats {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 18px;
+}
+.hero-stats div {
+    background: rgba(255, 255, 255, .16);
+    backdrop-filter: blur(6px);
+    border-radius: 14px;
+    padding: 8px 16px;
+    min-width: 110px;
+}
+.hero-stats b {
+    display: block;
+    font-size: 1.35rem;
+}
+.hero-stats span {
+    font-size: .78rem;
+    opacity: .9;
+}
+
+/* ---------- Onglets (style "pilules") ---------- */
+.stTabs [data-baseweb="tab-list"] {
+    gap: 8px;
+    flex-wrap: wrap;
+    border-bottom: none;
+}
+.stTabs [data-baseweb="tab"] {
+    border-radius: 999px;
+    padding: 8px 18px;
+    height: auto;
+    background: rgba(128, 128, 128, .10);
+    transition: background .25s ease, transform .2s ease;
+}
+.stTabs [data-baseweb="tab"]:hover {
+    transform: translateY(-2px);
+    background: rgba(124, 58, 237, .15);
+}
+.stTabs [aria-selected="true"] {
+    background: linear-gradient(120deg, #4f46e5, #7c3aed);
+    color: #fff !important;
+}
+.stTabs [aria-selected="true"] p {
+    color: #fff !important;
+}
+.stTabs [data-baseweb="tab-highlight"],
+.stTabs [data-baseweb="tab-border"] {
+    display: none;
+}
+.stTabs [data-baseweb="tab-panel"] {
+    animation: fadeUp .45s ease both;
+}
+
+/* ---------- Cartes des modèles ---------- */
+.card {
+    border: none;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, .08);
+    margin: 10px 0 18px 0;
+    transition: transform .3s ease, box-shadow .3s ease;
+    animation: fadeUp .5s ease both;
+}
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 14px 32px rgba(0, 0, 0, .16);
+}
+.card-img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.card-img img {
+    display: block;
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    max-height: 300px;
+    transition: transform .5s ease;
+}
+.card:hover .card-img img {
+    transform: scale(1.03);
+}
+.card-body {
+    padding: 14px 20px 18px 20px;
+}
+.card-body h3 {
+    margin: 8px 0 6px 0;
+    padding: 0;
+}
+.card-body p {
+    margin: 0;
+    opacity: .85;
+    font-size: .95rem;
+}
+.badge {
+    display: inline-block;
+    padding: 3px 12px;
+    border-radius: 999px;
+    font-size: .75rem;
+    font-weight: 600;
+    color: #fff;
+    letter-spacing: .3px;
+}
+
+/* ---------- Sélecteur Simple / Multiple ---------- */
+[data-testid="stButtonGroup"] button {
+    border-radius: 999px !important;
+    transition: all .2s ease;
+}
+
+/* ---------- Formulaire ---------- */
+[data-testid="stForm"] {
+    border-radius: 18px;
+    border: none;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, .05);
+    padding: 22px;
+    animation: fadeUp .45s ease both;
+}
+
+/* ---------- Boutons ---------- */
+.stButton > button,
+.stFormSubmitButton > button,
+.stDownloadButton > button {
+    border-radius: 12px;
+    font-weight: 600;
+    padding: 8px 22px;
+    transition: transform .2s ease, box-shadow .2s ease, filter .2s ease;
+}
+.stButton > button,
+.stFormSubmitButton > button {
+    background: linear-gradient(120deg, #4f46e5, #7c3aed);
+    color: #fff;
+    border: none;
+}
+.stButton > button:hover,
+.stFormSubmitButton > button:hover,
+.stDownloadButton > button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 18px rgba(79, 70, 229, .35);
+    filter: brightness(1.05);
+    color: #fff;
+}
+.stDownloadButton > button:hover {
+    color: inherit;
+}
+
+/* ---------- Zone de dépôt du CSV ---------- */
+[data-testid="stFileUploaderDropzone"] {
+    border: none;
+    border-radius: 18px;
+    background: rgba(124, 58, 237, .05);
+    padding: 26px;
+    transition: background .25s ease;
+}
+[data-testid="stFileUploaderDropzone"]:hover {
+    background: rgba(124, 58, 237, .10);
+}
+
+/* ---------- Colonnes attendues (CSV) ---------- */
+.cols-hint {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin: 4px 0 12px 0;
+}
+.cols-hint span {
+    font-family: Consolas, monospace;
+    font-size: .8rem;
+    padding: 3px 10px;
+    border-radius: 8px;
+    background: rgba(128, 128, 128, .12);
+}
+
+/* ---------- Carte de résultat ---------- */
+.result {
+    --accent: #7c3aed;
+    margin-top: 16px;
+    border-radius: 18px;
+    padding: 20px 24px;
+    background: linear-gradient(120deg, color-mix(in srgb, var(--accent) 14%, transparent), transparent);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, .08);
+    animation: popIn .4s ease both;
+}
+.result-label {
+    display: block;
+    font-size: .85rem;
+    opacity: .8;
+    text-transform: uppercase;
+    letter-spacing: .6px;
+}
+.result-value {
+    display: block;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--accent);
+    line-height: 1.25;
+}
+
+/* ---------- Tableaux ---------- */
+[data-testid="stDataFrame"] {
+    border-radius: 14px;
+    overflow: hidden;
+    animation: fadeUp .4s ease both;
+}
+
+/* ---------- Pied de page ---------- */
+.footer {
+    text-align: center;
+    margin-top: 40px;
+    padding: 18px 0 6px 0;
+    font-size: .82rem;
+    opacity: .7;
+}
