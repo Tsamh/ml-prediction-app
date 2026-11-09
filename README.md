@@ -2,12 +2,14 @@
 
 Application Streamlit qui déploie les 4 modèles du devoir de Machine Learning (Samba Hama TRAORE).
 
+L'interface est en **français** par défaut ; un sélecteur en haut à droite permet de passer en **anglais**.
+
 | Onglet | Problème | Cible | Meilleur modèle |
 |---|---|---|---|
-|  Telephone | Classification | État du téléphone (Neuf, D'occasion, Réconditionné, Venant) | Random Forest (accuracy ≈ 0,86) |
-|  Taxi Price | Régression | Prix d'un trajet de taxi | Random Forest (R² ≈ 0,92) |
-|  Car Class | Classification | Voiture Venant / D'occasion (Dakar) | Random Forest (accuracy ≈ 0,82) |
-|  Car Price | Régression | Prix de revente d'une voiture | Random Forest (R² ≈ 0,87) |
+|  Téléphone | Classification | État du téléphone (Neuf, D'occasion, Réconditionné, Venant) | Random Forest (accuracy ≈ 0,86) |
+|  Prix Taxi | Régression | Prix d'un trajet de taxi | Random Forest (R² ≈ 0,92) |
+|  Classe Voiture | Classification | Voiture Venant / D'occasion (Dakar) | Random Forest (accuracy ≈ 0,82) |
+|  Prix Voiture | Régression | Prix de revente d'une voiture | Random Forest (R² ≈ 0,87) |
 
 Chaque onglet propose :
 - **Simple Prédiction** : un formulaire pour prédire une seule observation ;
