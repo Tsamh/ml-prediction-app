@@ -2,7 +2,7 @@
 
 Application Streamlit qui déploie les 4 modèles du devoir de Machine Learning (Samba Hama TRAORE).
 
-L'interface est en **français** par défaut ; un sélecteur en haut à droite permet de passer en **anglais**.
+L'interface est en **français** par défaut ; un sélecteur en haut à droite permet de passer en **anglais**, et un autre de basculer entre le mode **clair** (☀️) et le mode **sombre** (🌙).
 
 | Onglet | Problème | Cible | Meilleur modèle |
 |---|---|---|---|
@@ -20,6 +20,7 @@ Chaque onglet propose :
 ```
 app.py               # application Streamlit
 style.css            # style de l'interface
+dark.css             # mode sombre (chargé quand on choisit 🌙)
 .streamlit/config.toml  # thème
 requirements.txt
 images/              # illustrations des cartes

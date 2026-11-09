@@ -79,34 +79,39 @@
 }
 
 /* ---------- Onglets (style "pilules") ---------- */
-.stTabs [data-baseweb="tab-list"] {
-    gap: 8px;
+.stTabs [role="tablist"] {
+    gap: 10px;
     flex-wrap: wrap;
     border-bottom: none;
+    box-shadow: none;
+    padding-bottom: 4px;
 }
-.stTabs [data-baseweb="tab"] {
+.stTabs [role="tablist"]::after,
+.stTabs [role="tablist"]::before {
+    display: none;
+}
+.stTabs [data-testid="stTab"] {
     border-radius: 999px;
-    padding: 8px 18px;
+    padding: 8px 20px;
     height: auto;
     background: rgba(128, 128, 128, .10);
-    transition: background .25s ease, transform .2s ease;
+    transition: background .25s ease, transform .2s ease, box-shadow .25s ease;
 }
-.stTabs [data-baseweb="tab"]:hover {
+.stTabs [data-testid="stTab"]:hover {
     transform: translateY(-2px);
     background: rgba(124, 58, 237, .15);
 }
-.stTabs [aria-selected="true"] {
+.stTabs [data-testid="stTab"][aria-selected="true"] {
     background: linear-gradient(120deg, #4f46e5, #7c3aed);
+    box-shadow: 0 6px 16px rgba(79, 70, 229, .30);
+}
+.stTabs [data-testid="stTab"][aria-selected="true"] p {
     color: #fff !important;
 }
-.stTabs [aria-selected="true"] p {
-    color: #fff !important;
-}
-.stTabs [data-baseweb="tab-highlight"],
-.stTabs [data-baseweb="tab-border"] {
+.stTabs .react-aria-SelectionIndicator {
     display: none;
 }
-.stTabs [data-baseweb="tab-panel"] {
+.stTabs [data-testid="stTabPanel"] {
     animation: fadeUp .45s ease both;
 }
 

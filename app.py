@@ -131,13 +131,21 @@ TEXTS = {
 CLASSES_EN = {"Venant": "Imported (Venant)", "D'occasion": "Used (D'occasion)",
               "Neuf": "New (Neuf)", "Réconditionné": "Refurbished (Réconditionné)"}
 
-# Sélecteur de langue (en haut à droite)
-_, col_lang = st.columns([5, 1])
+# Sélecteurs de langue et de thème (en haut à droite)
+_, col_lang, col_theme = st.columns([5.6, 1.4, 1], vertical_alignment='center')
 with col_lang:
     st.segmented_control('Langue / Language', ['fr', 'en'], default='fr', key='lang',
                          format_func=lambda l: {'fr': 'Français', 'en': 'English'}[l],
                          label_visibility='collapsed')
+with col_theme:
+    st.segmented_control('Thème / Theme', ['light', 'dark'], default='light', key='theme',
+                         format_func=lambda m: {'light': '☀️', 'dark': '🌙'}[m],
+                         label_visibility='collapsed')
 LANG = st.session_state.get('lang') or 'fr'
+
+# Mode sombre : on ajoute le fichier dark.css par-dessus style.css
+if st.session_state.get('theme') == 'dark':
+    load_css('dark.css')
 
 
 # Texte dans la langue choisie

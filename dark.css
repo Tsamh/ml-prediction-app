@@ -1,0 +1,163 @@
+/* =====================================================================
+   Mode sombre (chargé par app.py quand on choisit 🌙, après style.css)
+   ===================================================================== */
+
+:root {
+    --dk-bg: #0f1117;
+    --dk-surface: #1a1d29;
+    --dk-surface-2: #242838;
+    --dk-text: #e8e9f0;
+    --dk-text-soft: #a9adc1;
+    --dk-line: #33384d;
+}
+
+/* ---------- Fond et texte ---------- */
+.stApp,
+[data-testid="stAppViewContainer"],
+[data-testid="stMain"] {
+    background: var(--dk-bg);
+    color: var(--dk-text);
+}
+[data-testid="stHeader"] {
+    background: transparent;
+}
+[data-testid="stToolbar"] button,
+[data-testid="stToolbar"] span {
+    color: var(--dk-text);
+}
+.stApp h1, .stApp h2, .stApp h3, .stApp h4,
+.stApp p, .stApp li, .stApp label,
+.stApp [data-testid="stMarkdownContainer"],
+.stApp [data-testid="stWidgetLabel"] p {
+    color: var(--dk-text);
+}
+
+/* ---------- Onglets ---------- */
+.stTabs [data-testid="stTab"] {
+    background: var(--dk-surface-2);
+}
+.stTabs [data-testid="stTab"] p {
+    color: var(--dk-text);
+}
+
+/* ---------- Cartes ---------- */
+.card {
+    background: var(--dk-surface);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, .45);
+}
+.card-body p {
+    color: var(--dk-text-soft);
+}
+
+/* ---------- Formulaire et champs ---------- */
+[data-testid="stForm"] {
+    background: var(--dk-surface);
+    box-shadow: 0 4px 14px rgba(0, 0, 0, .35);
+}
+.stApp [data-baseweb="input"],
+.stApp [data-baseweb="base-input"],
+.stApp [data-baseweb="select"] > div,
+.stApp [data-testid="stSelectbox"] [role="group"],
+.stApp [data-testid="stNumberInputContainer"] {
+    background: var(--dk-surface-2);
+    border-color: var(--dk-line);
+}
+.stApp input,
+.stApp [data-baseweb="select"] div,
+.stApp [data-baseweb="select"] span {
+    color: var(--dk-text);
+    -webkit-text-fill-color: var(--dk-text);
+}
+.stApp [data-baseweb="select"] svg,
+.stApp [data-testid="stSelectbox"] svg,
+.stApp [data-testid="stNumberInputContainer"] svg {
+    fill: var(--dk-text-soft);
+    color: var(--dk-text-soft);
+}
+.stApp [data-testid="stNumberInputStepDown"],
+.stApp [data-testid="stNumberInputStepUp"] {
+    background: var(--dk-surface-2);
+    color: var(--dk-text);
+}
+
+/* Liste déroulante des selectbox (affichée hors de .stApp) */
+[data-baseweb="popover"] ul,
+[data-baseweb="popover"] li,
+[data-baseweb="menu"],
+[role="listbox"],
+[role="option"] {
+    background: var(--dk-surface-2);
+    color: var(--dk-text);
+}
+[data-baseweb="popover"] li:hover,
+[data-baseweb="popover"] li[aria-selected="true"],
+[role="option"]:hover,
+[role="option"][data-focused="true"],
+[role="option"][aria-selected="true"] {
+    background: #34395a;
+}
+
+/* ---------- Sélecteurs (langue, thème, simple / multiple) ---------- */
+[data-testid="stButtonGroup"] button {
+    background: var(--dk-surface-2);
+    color: var(--dk-text);
+    border-color: var(--dk-line);
+}
+[data-testid="stButtonGroup"] button p {
+    color: var(--dk-text);
+}
+[data-testid="stButtonGroup"] button[aria-checked="true"] {
+    background: rgba(124, 58, 237, .30);
+    border-color: #7c3aed;
+}
+
+/* ---------- Boutons secondaires (téléchargement) ---------- */
+.stDownloadButton > button {
+    background: var(--dk-surface-2);
+    color: var(--dk-text);
+    border-color: var(--dk-line);
+}
+.stDownloadButton > button p {
+    color: var(--dk-text);
+}
+
+/* ---------- Zone de dépôt du CSV ---------- */
+[data-testid="stFileUploaderDropzone"] {
+    background: rgba(124, 58, 237, .12);
+}
+[data-testid="stFileUploaderDropzone"] span,
+[data-testid="stFileUploaderDropzone"] small,
+[data-testid="stFileUploaderDropzone"] svg {
+    color: var(--dk-text-soft);
+}
+[data-testid="stFileUploaderDropzone"] button {
+    background: var(--dk-surface-2);
+    color: var(--dk-text);
+    border-color: var(--dk-line);
+}
+[data-testid="stFileUploaderFile"],
+[data-testid="stFileUploaderFileName"] {
+    color: var(--dk-text);
+}
+
+/* ---------- Colonnes attendues ---------- */
+.cols-hint span {
+    background: var(--dk-surface-2);
+    color: var(--dk-text);
+}
+
+/* ---------- Tableaux (dessinés en canvas : on inverse les couleurs) ---------- */
+[data-testid="stDataFrame"] {
+    filter: invert(.92) hue-rotate(180deg);
+}
+
+/* ---------- Notifications ---------- */
+[data-testid="stToast"] {
+    background: var(--dk-surface-2);
+    color: var(--dk-text);
+}
+
+/* ---------- Pied de page ---------- */
+.footer {
+    color: var(--dk-text-soft);
+}
